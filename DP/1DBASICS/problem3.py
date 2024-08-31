@@ -34,3 +34,20 @@ class Solution:
         return dp[n]  
 
 # Space Optimization 
+class Solution:
+    def tribonacci(self, n: int ) -> int:
+        if n ==0 :
+            return 0
+        if n ==1:
+            return 1
+        if n ==2 :
+            return 1 
+        p1 = 1
+        p2 = 1
+        p3 = 0    
+        for i in range (3,n+1):
+            cur_i = p1+p2+p3
+            p3 = p2
+            p2 = p1
+            p1 = cur_i
+        return p1
